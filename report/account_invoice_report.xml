@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Account Invoice Report -->
+        <template id="invoice_report_inherit" inherit_id="account.report_invoice_document">
+            <!-- Ajouter les données  du clients -->
+            <xpath expr="//t[@t-set='address']" position="replace">
+                <t t-set="address">
+                    <div style="line-height: 50%; padding-top:10px; font-size:15px;">
+
+                        <!-- Client Name-->
+                        <div>
+                            <strong>
+                                <span t-field="o.partner_id.name"/>
+                            </strong>
+                        </div>
+
+                        <!-- Client Street-->
+                        <div style="margin-top:20px;">
+                            <span t-field="o.partner_id.street"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.street2"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.zip"/>
+                            <span t-field="o.partner_id.city"/>
+                            <span t-if="o.partner_id.state_id">(<span t-field="o.partner_id.state_id"/>)
+                                <span t-if="o.partner_id.country_id">,</span>
+                            </span>
+                            <span t-field="o.partner_id.country_id"/>
+                        </div>
+
+                        <!--Client Phone-->
+                        <div>
+                            <ul class="list-inline mb4" style="margin-top:20px;">
+                                <li t-if="o.partner_id.phone" style="display:inline-block; margin-right: 10px;">
+                                    Tél:
+                                    <span t-field="o.partner_id.phone"/>
+                                </li>
+
+                                <li t-if="o.partner_id.mobile" style="display:inline-block; margin-right: 10px;">
+                                    Mobile:
+                                    <span t-field="o.partner_id.mobile"/>
+                                </li>
+
+                                <li t-if="o.partner_id.fax" style="display:inline-block; margin-top:15px;">
+                                    Fax:
+                                    <span t-field="o.partner_id.fax"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Ajouter les Données Fiscales du clients -->
+                    <div style="font-size:15px;">
+                         <ul class="list-inline mb4" style="margin-top:20px;">
+                             <li t-if="o.partner_id.nrc" style="display:inline-block; margin-right: 10px;">
+                                    N° RC :
+                                    <span t-field="o.partner_id.nrc"/>
+                             </li>
+
+                              <li t-if="o.partner_id.nif" style="display:inline-block; margin-right: 10px;">
+                                    NIF :
+                                    <span t-field="o.partner_id.nif"/>
+                              </li>
+
+                              <li t-if="o.partner_id.ai" style="display:inline-block; margin-right: 10px;">
+                                    AI :
+                                    <span t-field="o.partner_id.ai"/>
+                              </li>
+
+                              <li t-if="o.partner_id.nis" style="display:inline-block; margin-right: 10px;">
+                                    NIS :
+                                    <span t-field="o.partner_id.nis"/>
+                              </li>
+                         </ul>
+                    </div>
+
+                </t>
+            </xpath>
+            <!-- Montant ttc en lettres-->
+            <xpath expr="//div[@class='clearfix']" position="after">
+                <div style="font-size:16px; padding-bottom:35px; padding-top:35px;">
+                    <tr class="border-black">
+                        <td>
+                            <strong>Arrêtée la présente facture à la somme de :</strong>
+                        </td>
+                        <td>
+                            <span t-field="o.num_word"/>
+                        </td>
+                    </tr>
+                </div>
+            </xpath>
+        </template>
+
+        <!--Changer la langue selon l'utilisateur courant aux lieux du client/fournisseur (partner language)-->
+        <template id="report_invoice_lang" inherit_id="account.report_invoice">
+                    <xpath expr="//t[@t-set='lang']" position="attributes">
+                        <attribute name="t-value">o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else request.env.user.partner_id.lang</attribute>
+                    </xpath>
+        </template>
+        <template id="report_invoice_with_payments_lang" inherit_id="account.report_invoice_with_payments">
+                    <xpath expr="//t[@t-set='lang']" position="attributes">
+                        <attribute name="t-value">o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else request.env.user.partner_id.lang</attribute>
+                    </xpath>
+        </template>
+
+
+    </data>
+</odoo>

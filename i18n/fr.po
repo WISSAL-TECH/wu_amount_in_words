@@ -1,0 +1,383 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fs_amount_in_words
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-14 07:46+0000\n"
+"PO-Revision-Date: 2022-03-14 07:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "<span> au capital Social: </span>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "<span>A.I : </span>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "<span>N.I.F : </span>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "<span>N.I.S : </span>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "<span>N° RC : </span>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "<strong style=\"text-align:left;padding-left:12px;\">Date : </strong>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid ""
+"<strong style=\"text-align:left;padding-left:12px;\">Signature et mention "
+"(bon pour accord)</strong>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "<strong style=\"text-align:left;padding-left:12px;\">Visa.</strong>"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+msgid "<strong>This invoice is approved for the sum of:</strong>"
+msgstr "<strong>Arrêtée la présente facture à la somme de:</strong>"
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__ai
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__ai
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__ai
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__ai
+msgid "A.I"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "AI :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__capital_social
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__capital_social
+msgid "Capitale Social"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__city
+msgid "City"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__code
+msgid "Code"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_base_document_layout
+msgid "Company Document Layout"
+msgstr "Mise en page des documents de votre société"
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "Courrier :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__fax
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__fax
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__fax
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__fax
+msgid "Fax"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "Fax:"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__state_id
+msgid "Fed. State"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__forme_juridique_company
+msgid "Forme Juridique"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__id
+msgid "ID"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.res_partner_donnees_fiscales
+msgid "Informations Fiscales"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_account_move
+msgid "Journal Entry"
+msgstr "Pièce comptable"
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "Mobile:"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__nif
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__nif
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__nif
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__nif
+msgid "N.I.F"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__nis
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__nis
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__nis
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__nis
+msgid "N.I.S"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "NIF :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "NIS :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_forme_juridique__name
+msgid "Nom"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_account_bank_statement_line__num_word
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_account_move__num_word
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_account_payment__num_word
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_purchase_order__num_word
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_sale_order__num_word
+msgid "Num Word"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__nrc
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_company__nrc
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__nrc
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__nrc
+msgid "N° RC"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "N° RC :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "N° de compte:"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_partner__position_fiscale
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_res_users__position_fiscale
+msgid "Position Fiscale"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+msgid "Site web:"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__street
+msgid "Street"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__street2
+msgid "Street2"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "TTC"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.view_move_form_word
+msgid "This invoice is approved for the sum of:"
+msgstr "Arrêtée la présente facture à la somme de:"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+msgid "This purchase order form is approved for the sum of:"
+msgstr "Arrêtée le présent Bon de commande à la somme de:"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchase_order_form_word
+msgid "This purchase order is approved for the sum of:"
+msgstr "Arrêtée le présent Bon de commande à la somme de:"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchase_order_form_word
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+msgid "This request for quotation is approved for the sum of:"
+msgstr "Arrêtée la présente demande de prix à la somme de:"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.view_order_form_word
+msgid "This sale order is approved for the sum of:"
+msgstr "Arrêtée le présent Bon de commande à la somme de:"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.view_order_form_word
+msgid "This sale quotation is approved for the sum of:"
+msgstr "Arrêtée le présent devis à la somme de :"
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.external_layout_standard_company_donnees_fiscales
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit_demande_prix
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "Tél:"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "Visa / Signature :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.purchse_report_inherit
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.sale_report_inherit
+msgid "Visa / Signature client :"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.res_company_donnees_fiscales
+#: model_terms:ir.ui.view,arch_db:fs_amount_in_words.res_partner_donnees_fiscales
+msgid "Wilaya"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model.fields,field_description:fs_amount_in_words.field_base_document_layout__zip
+msgid "Zip"
+msgstr ""
+
+#. module: fs_amount_in_words
+#: model:ir.model,name:fs_amount_in_words.model_forme_juridique
+msgid "forme.juridique"
+msgstr ""

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- Purchase Order Report -->
+        <template id="purchse_report_inherit" inherit_id="purchase.report_purchaseorder_document">
+
+             <!-- change the lang of chiffre en lettre (l'utilisateur courant)-->
+            <xpath expr="//t[@t-set='o']" position="attributes">
+                    <attribute name="t-value">o.with_context(lang=request.env.user.partner_id.lang)</attribute>
+            </xpath>
+
+             <!-- Ajouter les données  du fournisseurs -->
+            <xpath expr="//t[@t-set='address']" position="replace">
+                <t t-set="address">
+                    <div style="line-height: 50%; padding-top:10px; font-size:15px;">
+
+<!--                    Fournisseur Name-->
+                        <div>
+                            <strong>
+                                <span t-field="o.partner_id.name"/>
+                            </strong>
+                        </div>
+
+<!--                    Fournisseur Street-->
+                        <div style="margin-top:20px;">
+                            <span t-field="o.partner_id.street"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.street2"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.zip"/>
+                            <span t-field="o.partner_id.city"/>
+                            <span t-if="o.partner_id.state_id">(<span t-field="o.partner_id.state_id"/>)
+                                <span t-if="o.partner_id.country_id">,</span>
+                            </span>
+                            <span t-field="o.partner_id.country_id"/>
+                        </div>
+
+<!--                    Fournisseur Phone-->
+                        <div>
+                            <ul class="list-inline mb4" style="margin-top:20px;">
+                                <li t-if="o.partner_id.phone" style="display:inline-block; margin-right: 10px;">
+                                    Tél:
+                                    <span t-field="o.partner_id.phone"/>
+                                </li>
+
+                                <li t-if="o.partner_id.mobile" style="display:inline-block; margin-right: 10px;">
+                                    Mobile:
+                                    <span t-field="o.partner_id.mobile"/>
+                                </li>
+
+                                <li t-if="o.partner_id.fax" style="display:inline-block; margin-top:15px;">
+                                    Fax:
+                                    <span t-field="o.partner_id.fax"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+<!--                Ajouter les Données Fiscales du Fournisseur -->
+                    <div style="font-size:15px;">
+                         <ul class="list-inline mb4" style="margin-top:20px;">
+                             <li t-if="o.partner_id.nrc" style="display:inline-block; margin-right: 10px;">
+                                    N° RC :
+                                    <span t-field="o.partner_id.nrc"/>
+                             </li>
+
+                              <li t-if="o.partner_id.nif" style="display:inline-block; margin-right: 10px;">
+                                    NIF :
+                                    <span t-field="o.partner_id.nif"/>
+                              </li>
+
+                              <li t-if="o.partner_id.ai" style="display:inline-block; margin-right: 10px;">
+                                    AI :
+                                    <span t-field="o.partner_id.ai"/>
+                              </li>
+
+                              <li t-if="o.partner_id.nis" style="display:inline-block; margin-right: 10px;">
+                                    NIS :
+                                    <span t-field="o.partner_id.nis"/>
+                              </li>
+                         </ul>
+                    </div>
+                </t>
+            </xpath>
+
+            <!-- Montant ttc en lettres & signatures-->
+            <xpath expr="//div[@class='row justify-content-end']" position="after">
+                <!-- Montant ttc en lettres-->
+                <div style="font-size:16px; padding-bottom:35px; padding-top:35px;">
+                    <tr class="border-black">
+                        <td>
+                            <strong t-if="o.state not in ['draft','sent']">Arrêtée le présent bon de commande à la somme de :</strong>
+                        </td>
+                        <td>
+                            <strong t-if="o.state in ['draft','sent']">Arrêtée le présent bon de commande à la somme de :</strong>
+                        </td>
+                        <td>
+                            <span t-field="o.num_word"/>
+                        </td>
+                    </tr>
+                </div>
+                <br/>
+
+
+            </xpath>
+        </template>
+
+
+<!--     Demande de prix-->
+<!--     Ajouter les données fiscales du fournisseur dans 'demande de prix'-->
+        <template id="purchse_report_inherit_demande_prix" inherit_id="purchase.report_purchasequotation_document">
+
+             <!-- change the lang of chiffre en lettre (l'utilisateur courant)-->
+            <xpath expr="//t[@t-set='o']" position="attributes">
+                    <attribute name="t-value">o.with_context(lang=request.env.user.partner_id.lang)</attribute>
+            </xpath>
+
+            <!-- Ajouter les données du fournisseurs  -->
+            <xpath expr="//t[@t-set='address']" position="replace">
+                <t t-set="address">
+                    <div style="line-height: 50%; padding-top:10px; font-size:15px;">
+                        <!--  Fournisseur Name-->
+                        <div>
+                            <strong>
+                                <span t-field="o.partner_id.name"/>
+                            </strong>
+                        </div>
+                        <!--Fournisseur Street-->
+                        <div style="margin-top:20px;">
+                            <span t-field="o.partner_id.street"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.street2"/>
+                        </div>
+                        <div style="padding-top:10px;">
+                            <span t-field="o.partner_id.zip"/>
+                            <span t-field="o.partner_id.city"/>
+                            <span t-if="o.partner_id.state_id">(<span t-field="o.partner_id.state_id"/>)
+                                <span t-if="o.partner_id.country_id">,</span>
+                            </span>
+                            <span t-field="o.partner_id.country_id"/>
+                        </div>
+
+                        <!-- Fournisseur Phone-->
+                        <div>
+                            <ul class="list-inline mb4" style="margin-top:20px;">
+                                <li t-if="o.partner_id.phone" style="display:inline-block; margin-right: 10px;">
+                                    Tél:
+                                    <span t-field="o.partner_id.phone"/>
+                                </li>
+
+                                <li t-if="o.partner_id.mobile" style="display:inline-block; margin-right: 10px;">
+                                    Mobile:
+                                    <span t-field="o.partner_id.mobile"/>
+                                </li>
+
+                                <li t-if="o.partner_id.fax" style="display:inline-block; margin-top:15px;">
+                                    Fax:
+                                    <span t-field="o.partner_id.fax"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--  Les Données Fiscales du Fournisseur-->
+                    <div style="font-size:15px;">
+                         <ul class="list-inline mb4" style="margin-top:20px;">
+                             <li t-if="o.partner_id.nrc" style="display:inline-block; margin-right: 10px;">
+                                    N° RC :
+                                    <span t-field="o.partner_id.nrc"/>
+                             </li>
+
+                              <li t-if="o.partner_id.nif" style="display:inline-block; margin-right: 10px;">
+                                    NIF :
+                                    <span t-field="o.partner_id.nif"/>
+                              </li>
+
+                              <li t-if="o.partner_id.ai" style="display:inline-block; margin-right: 10px;">
+                                    AI :
+                                    <span t-field="o.partner_id.ai"/>
+                              </li>
+
+                              <li t-if="o.partner_id.nis" style="display:inline-block; margin-right: 10px;">
+                                    NIS :
+                                    <span t-field="o.partner_id.nis"/>
+                              </li>
+                         </ul>
+                    </div>
+                </t>
+            </xpath>
+
+        </template>
+
+
+        <!--Changer la langue selon l'utilisateur courant aux lieux du client/fournisseur (partner language)-->
+        <template id="report_purchaseorder_lang" inherit_id="purchase.report_purchaseorder">
+               <xpath expr="//t[@t-call='purchase.report_purchaseorder_document']" position="attributes">
+                    <attribute name="t-lang">request.env.user.partner_id.lang</attribute>
+               </xpath>
+        </template>
+        <template id="report_purchasequotation_lang" inherit_id="purchase.report_purchasequotation">
+               <xpath expr="//t[@t-call='purchase.report_purchasequotation_document']" position="attributes">
+                    <attribute name="t-lang">request.env.user.partner_id.lang</attribute>
+               </xpath>
+        </template>
+
+    </data>
+</odoo>

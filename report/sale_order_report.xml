@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- Sale Order Report -->
+        <template id="sale_report_amount_inherit" inherit_id="sale.report_saleorder_document">
+
+            <!-- change the lang of chiffre en lettre (l'utilisateur courant)-->
+            <xpath expr="//t[@t-set='doc']" position="attributes">
+                <attribute name="t-value">doc.with_context(lang=request.env.user.partner_id.lang)</attribute>
+            </xpath>
+
+            <!-- Ajouter les données  du clients -->
+            <xpath expr="//t[@t-set='address']" position="replace">
+               <t t-set="address">
+                <div style="padding-left:10px;">
+
+                        <!--                    Client Name-->
+                        <div>
+                            <strong>
+                                <span t-field="doc.partner_id.name"/>
+                            </strong>
+                        </div>
+
+                        <!--                    Client Street-->
+                        <div>
+                            <span t-field="doc.partner_id.street"/>
+                        </div>
+                        <div>
+                            <span t-field="doc.partner_id.street2"/>
+                        </div>
+                        <div>
+                            <span t-field="doc.partner_id.zip"/>
+                            <span t-field="doc.partner_id.city"/>
+                            <span t-if="doc.partner_id.state_id">(<span t-field="doc.partner_id.state_id"/>)
+                                <span t-if="doc.partner_id.country_id">,</span>
+                            </span>
+                            <span t-field="doc.partner_id.country_id"/>
+                        </div>
+
+                        <!--                    Client Phone-->
+                        <div>
+                            <ul class="list-inline mb4">
+                                <li t-if="doc.partner_id.phone" style="display:inline-block; margin-right: 10px;">
+                                    Tél:
+                                    <span t-field="doc.partner_id.phone"/>
+                                </li>
+
+                                <li t-if="doc.partner_id.mobile" style="display:inline-block; margin-right: 10px;">
+                                    Mobile:
+                                    <span t-field="doc.partner_id.mobile"/>
+                                </li>
+
+                                <li t-if="doc.partner_id.fax" style="display:inline-block;">
+                                    Fax:
+                                    <span t-field="doc.partner_id.fax"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!--                Ajouter les Données Fiscales-->
+                    <div style="font-size:15px; padding-right:10px;">
+                        <ul class="list-inline mb4" style="padding-left:10px;" >
+                            <li t-if="doc.partner_id.nrc" style="display:inline-block; margin-right: 10px;">
+                                N° RC :
+                                <span t-field="doc.partner_id.nrc"/>
+                            </li>
+
+                            <li t-if="doc.partner_id.nif" style="display:inline-block; margin-right: 10px;">
+                                NIF :
+                                <span t-field="doc.partner_id.nif"/>
+                            </li>
+
+                            <li t-if="doc.partner_id.ai" style="display:inline-block; margin-right: 10px;">
+                                AI :
+                                <span t-field="doc.partner_id.ai"/>
+                            </li>
+
+                            <li t-if="doc.partner_id.nis" style="display:inline-block; margin-right: 10px;">
+                                NIS :
+                                <span t-field="doc.partner_id.nis"/>
+                            </li>
+                        </ul>
+                    </div>
+
+                 </t>
+            </xpath>
+    <!-- Montant ttc en lettres & signatures-->
+            <xpath expr="//div[@class='clearfix']" position="after">
+                <!-- Montant ttc en lettre-->
+                <div style="font-size:16px; padding-bottom:35px; padding-top:35px;">
+                    <tr class="border-black">
+                        <td>
+                            <strong t-if="doc.state not in ['draft','sent']">Arrêtée le présent devis à la somme de :</strong>
+                        </td>
+                        <td>
+                            <strong t-if="doc.state in ['draft','sent']">Arrêtée le présent devis à la somme de :</strong>
+                        </td>
+                        <td>
+                            <span t-field="doc.num_word"/>
+                        </td>
+                    </tr>
+                </div>
+                <br/>
+
+            </xpath>
+
+        </template>
+
+
+        <!--Changer la langue selon l'utilisateur courant aux lieux du client/fournisseur (partner lang)-->
+        <template id="report_saleorder_lang" inherit_id="sale.report_saleorder">
+            <xpath expr="//t[@t-call='sale.report_saleorder_document']" position="attributes">
+                <attribute name="t-lang">request.env.user.partner_id.lang</attribute>
+            </xpath>
+        </template>
+        <template id="report_saleorder_pro_forma_lang" inherit_id="sale.report_saleorder_pro_forma">
+            <xpath expr="//t[@t-call='sale.report_saleorder_document']" position="attributes">
+                <attribute name="t-lang">request.env.user.partner_id.lang</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
